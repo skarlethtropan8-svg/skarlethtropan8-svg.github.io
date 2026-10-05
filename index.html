@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skarlett Tropan · Desarrolladora de Software</title>
+<meta name="description" content="Skarlett Tropan — Desarrolladora de Software Full-Stack y Backend en Santiago, Chile. C#, Python, SQL, Kotlin y React.">
+<meta property="og:title" content="Skarlett Tropan · Desarrolladora de Software">
+<meta property="og:description" content="Full-Stack · Backend · Datos — C#, Python, SQL, Kotlin, React. Santiago, Chile.">
+<meta property="og:image" content="foto.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafafb; --surface:#ffffff; --ink:#15131c; --ink-2:#4b4858; --ink-3:#8a8797;
+  --line:#e8e6ef; --accent:#7c3aed; --accent-2:#a78bfa; --accent-soft:#f3effe;
+  --radius:14px; --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(250,250,251,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.01em}
+.brand i{width:10px;height:22px;background:var(--accent);transform:skewX(-18deg);border-radius:2px}
+.links{display:flex;gap:26px;font-size:.92rem;color:var(--ink-2);font-weight:500}
+.links a:hover{color:var(--accent)}
+@media(max-width:820px){.links{display:none}}
+
+/* hero */
+.hero{padding:88px 0 72px}
+.hero .wrap.top{display:grid;grid-template-columns:300px 1fr;gap:64px;align-items:center}
+.photo{position:relative;width:300px}
+.photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius);display:block;position:relative;z-index:1;filter:saturate(.92)}
+.photo::before{content:"";position:absolute;inset:18px -18px -18px 18px;border-radius:var(--radius);background:var(--accent-soft);border:1px solid #e4dafd}
+.photo::after{content:"";position:absolute;z-index:2;left:0;bottom:0;width:90px;height:90px;background:var(--accent);clip-path:polygon(0 0,0 100%,100% 100%);border-bottom-left-radius:var(--radius);opacity:.92}
+.hero h1{font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.05;letter-spacing:-.035em;font-weight:800;margin:14px 0 18px}
+.hero h1 span{color:var(--accent)}
+.lead{font-size:1.15rem;color:var(--ink-2);max-width:580px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 30px}
+.tag{font-size:.82rem;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--ink-2)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:700;font-size:.95rem;border:1px solid var(--line);background:var(--surface);transition:.15s}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{background:#6d28d9;color:#fff}
+.btn svg{width:18px;height:18px}
+@media(max-width:820px){.hero{padding:48px 0}.hero .wrap.top{grid-template-columns:1fr;gap:40px}.photo{width:220px}}
+
+/* sections */
+section{padding:84px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:-.025em;line-height:1.15;font-weight:800;max-width:720px}
+.sec-head p{color:var(--ink-2);max-width:680px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:56px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.stat b{display:block;font-size:1.7rem;letter-spacing:-.03em;color:var(--accent)}
+.stat span{font-size:.88rem;color:var(--ink-2)}
+@media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* projects */
+.cases{display:grid;gap:22px}
+.case{display:grid;grid-template-columns:1.3fr 1fr;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.2s}
+.case:hover{border-color:#d9cdfb;box-shadow:0 12px 40px -18px rgba(124,58,237,.25)}
+.case-body{padding:34px}
+.case .num{font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--ink-3)}
+.case h3{font-size:1.55rem;letter-spacing:-.02em;margin:8px 0 10px}
+.case p{color:var(--ink-2)}
+.case ul{margin:16px 0 0 18px;color:var(--ink-2);font-size:.95rem}
+.case li{margin:4px 0}
+.case-meta{background:var(--accent-soft);padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:18px 20px;align-content:start;border-left:1px solid var(--line)}
+.meta small{display:block;font-family:"JetBrains Mono",monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.meta div{font-weight:600;font-size:.95rem;margin-top:3px}
+.case-meta .btn{grid-column:1/-1;justify-content:center;margin-top:6px}
+.badge{display:inline-block;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:999px;background:#ecfdf3;color:#067647;border:1px solid #abefc6}
+.badge.wip{background:#fff7ed;color:#b54708;border-color:#fed7aa}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.mini{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:10px;transition:.2s}
+.mini:hover{border-color:#d9cdfb}
+.mini h3{font-size:1.2rem;letter-spacing:-.015em}
+.mini p{color:var(--ink-2);font-size:.95rem;flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:6px;background:var(--accent-soft);color:#5b21b6}
+.mini a.more{font-weight:700;color:var(--accent);font-size:.9rem}
+@media(max-width:820px){.case{grid-template-columns:1fr}.case-meta{border-left:0;border-top:1px solid var(--line)}.grid2{grid-template-columns:1fr}}
+
+/* experience */
+.job{display:grid;grid-template-columns:220px 1fr;gap:40px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:36px}
+.job aside small{display:block;color:var(--ink-3);font-size:.88rem}
+.job aside b{display:block;font-size:1.2rem;margin:4px 0}
+.timeline{margin-top:18px;display:flex;flex-direction:column;gap:12px;border-left:2px solid var(--line);padding-left:16px}
+.timeline div{position:relative;font-size:.88rem;color:var(--ink-2)}
+.timeline div::before{content:"";position:absolute;left:-22px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline strong{display:block;color:var(--ink)}
+.job h3{font-size:1.35rem;letter-spacing:-.02em;margin-bottom:6px}
+.job .intro{color:var(--ink-2);margin-bottom:18px}
+.areas{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.area{border:1px solid var(--line);border-radius:12px;padding:18px}
+.area h4{font-size:.98rem;margin-bottom:6px}
+.area p{font-size:.9rem;color:var(--ink-2)}
+@media(max-width:820px){.job{grid-template-columns:1fr;gap:24px;padding:26px}.areas{grid-template-columns:1fr}}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.skill h3{font-size:.8rem;font-family:"JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.skill ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.skill li{font-size:.95rem;font-weight:500;padding-bottom:8px;border-bottom:1px dashed var(--line)}
+.skill li:last-child{border:0;padding:0}
+@media(max-width:920px){.skills{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.skills{grid-template-columns:1fr}}
+
+/* education */
+.edu{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:8px}
+.card .k{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.card h3{font-size:1.08rem;letter-spacing:-.01em;line-height:1.3}
+.card p{font-size:.9rem;color:var(--ink-2)}
+@media(max-width:920px){.edu{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.edu{grid-template-columns:1fr}}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+.about p{color:var(--ink-2);margin-bottom:14px;font-size:1.05rem}
+.about p b{color:var(--ink)}
+.looking{background:var(--ink);color:#f4f2fa;border-radius:18px;padding:30px}
+.looking .mono{color:var(--accent-2)}
+.looking h3{font-size:1.3rem;margin:10px 0 14px;letter-spacing:-.015em}
+.looking ul{list-style:none;display:flex;flex-direction:column;gap:10px;color:#cfcbe0;font-size:.95rem}
+.looking li::before{content:"→ ";color:var(--accent-2)}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:48px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.contact h2{font-size:clamp(1.8rem,3.4vw,2.6rem);letter-spacing:-.03em;line-height:1.1;margin:10px 0 14px}
+.contact p{color:var(--ink-2)}
+.channels{display:flex;flex-direction:column;gap:10px}
+.channel{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border:1px solid var(--line);border-radius:12px;transition:.15s}
+.channel:hover{border-color:var(--accent)}
+.channel small{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.channel span{font-weight:600;font-size:.95rem;word-break:break-all;text-align:right}
+@media(max-width:820px){.contact{grid-template-columns:1fr;padding:30px}}
+footer{padding:40px 0 56px;color:var(--ink-3);font-size:.85rem;text-align:center}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><i></i>Skarlett Tropan</a>
+    <div class="links">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#formacion">Formación</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap top">
+    <div class="photo"><img src="foto.jpg" alt="Skarlett Tropan"></div>
+    <div>
+      <span class="mono">Desarrolladora de Software · Full-Stack · Backend · Datos</span>
+      <h1>Skarlett <span>Tropan</span></h1>
+      <p class="lead">Construyo sistemas de punta a punta: lógica de negocio y APIs, bases de datos bien diseñadas, automatización de procesos e interfaces web y móviles que la gente puede usar.</p>
+      <div class="tags">
+        <span class="tag">C# · ASP.NET</span><span class="tag">Python</span><span class="tag">SQL Server · PostgreSQL</span><span class="tag">Kotlin · Compose</span><span class="tag">React</span><span class="tag">Santiago, Chile</span>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="mailto:skarlethtropan8@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Escríbeme</a>
+        <a class="btn" href="https://www.linkedin.com/in/skarlett-victoria-tropan-herrera-862047183/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.75h4v11H3zM9.5 9.75h3.8v1.5h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1v5.45h-4v-4.83c0-1.15-.02-2.63-1.6-2.63-1.6 0-1.85 1.25-1.85 2.55v4.91h-4z"/></svg>LinkedIn</a>
+        <a class="btn" href="https://github.com/skarlethtropan8-svg" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b>6 meses</b><span>en desarrollo de software en el sector financiero</span></div>
+      <div class="stat"><b>5</b><span>proyectos publicados en GitHub</span></div>
+      <div class="stat"><b>Web · Mobile</b><span>ASP.NET, React y Android nativo</span></div>
+      <div class="stat"><b>Híbrido</b><span>o remoto desde Santiago, Chile</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="proyectos">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono">Proyectos destacados</span>
+      <h2>Software que resuelve un caso real, de la base de datos a la pantalla.</h2>
+    </div>
+
+    <div class="cases">
+      <article class="case">
+        <div class="case-body">
+          <span class="num">01 · MOBILE · FULL-STACK · PORTAFOLIO DE TÍTULO</span>
+          <h3>Level Up Gamer</h3>
+          <p>E-commerce nativo Android para productos gaming en el mercado chileno, con backend REST propio y tres roles de usuario: administrador, supervisor y cliente.</p>
+          <ul>
+            <li>Autenticación con verificación de correo por código y recuperación de contraseña en dos pasos.</li>
+            <li>Catálogo con filtros, carrito, pago con validación de tarjeta y confirmación de orden.</li>
+            <li>Gestión de direcciones con Google Maps y geolocalización.</li>
+            <li>Principal contribuidora del repositorio en un equipo de tres.</li>
+          </ul>
+        </div>
+        <div class="case-meta">
+          <div class="meta"><small>Rol</small><div>Full-Stack mobile</div></div>
+          <div class="meta"><small>Estado</small><div><span class="badge">Publicado</span></div></div>
+          <div class="meta"><small>App</small><div>Kotlin · Jetpack Compose · MVVM</div></div>
+          <div class="meta"><small>Backend</small><div>FastAPI · MySQL · SMTP</div></div>
+          <a class="btn" href="https://github.com/skarlethtropan8-svg/level-up-gamer-android" target="_blank" rel="noopener">Ver en GitHub →</a>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="case-body">
+          <span class="num">02 · MICROSERVICIOS · EN EQUIPO</span>
+          <h3>SRE Valle del Sol</h3>
+          <p>Sistema de respuesta a emergencias para una municipalidad: gestión de incidentes, recursos y zonas de riesgo sobre una arquitectura de microservicios.</p>
+          <ul>
+            <li>Microservicios Spring Boot con API Gateway, BFF y descubrimiento con Eureka.</li>
+            <li>Seguridad con Keycloak y panel operativo en React.</li>
+            <li>Patrones Factory, Adapter y Facade, con pruebas unitarias.</li>
+          </ul>
+        </div>
+        <div class="case-meta">
+          <div class="meta"><small>Ámbito</small><div>Emergencias</div></div>
+          <div class="meta"><small>Estado</small><div><span class="badge">Publicado</span></div></div>
+          <div class="meta"><small>Backend</small><div>Java · Spring Boot · Spring Cloud</div></div>
+          <div class="meta"><small>Frontend</small><div>React · Vite · Vitest</div></div>
+          <a class="btn" href="https://github.com/skarlethtropan8-svg/sre-valle-del-sol" target="_blank" rel="noopener">Ver en GitHub →</a>
+        </div>
+      </article>
+
+      <div class="grid2">
+        <article class="mini">
+          <span class="num mono" style="color:var(--ink-3)">03 · Android</span>
+          <h3>Pastelería Store</h3>
+          <p>App móvil de pastelería con catálogo, carrito de compras, registro e inicio de sesión y perfil editable. Persistencia local y consumo de API REST.</p>
+          <div class="chips"><span class="chip">Kotlin</span><span class="chip">Compose</span><span class="chip">Room</span><span class="chip">Retrofit</span><span class="chip">MVVM</span></div>
+          <a class="more" href="https://github.com/skarlethtropan8-svg/pasteleria-store-android" target="_blank" rel="noopener">Ver en GitHub →</a>
+        </article>
+        <article class="mini">
+          <span class="num mono" style="color:var(--ink-3)">04 · Web</span>
+          <h3>Pastelería Admin</h3>
+          <p>Panel de administración web para el catálogo de la pastelería: listado y detalle de productos y categorías conectados a una API REST.</p>
+          <div class="chips"><span class="chip">React</span><span class="chip">React Router</span><span class="chip">AdminLTE</span><span class="chip">Axios</span></div>
+          <a class="more" href="https://github.com/skarlethtropan8-svg/pasteleria-admin-react" target="_blank" rel="noopener">Ver en GitHub →</a>
+        </article>
+        <article class="mini" style="grid-column:1/-1">
+          <span class="num mono" style="color:var(--ink-3)">05 · Cliente real · <span class="badge wip">En desarrollo</span></span>
+          <h3>Lifpool Piscinas</h3>
+          <p>Sistema de gestión para una empresa de mantención de piscinas: clientes y piscinas, agenda de visitas, registro técnico por visita, cobros mensuales con envío por WhatsApp y reportes.</p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">MySQL</span><span class="chip">HTML · CSS · JS</span></div>
+          <a class="more" href="https://github.com/skarlethtropan8-svg/Lifpool-Piscinas" target="_blank" rel="noopener">Ver en GitHub →</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono">Experiencia</span>
+      <h2>Desarrollo en producción dentro del sector financiero.</h2>
+    </div>
+    <div class="job">
+      <aside>
+        <small>Santiago, Chile · 2026</small>
+        <b>BanCrece</b>
+        <small>Cooperativa de ahorro y crédito</small>
+        <div class="timeline">
+          <div><strong>Analista Programadora</strong>Agosto – Septiembre 2026</div>
+          <div><strong>Práctica profesional</strong>Abril – Julio 2026</div>
+        </div>
+      </aside>
+      <div>
+        <h3>Analista Programadora</h3>
+        <p class="intro">Desarrollo y mantención de la intranet corporativa y sus módulos de negocio, diseño de bases de datos y automatización de procesos de datos.</p>
+        <div class="areas">
+          <div class="area"><h4>Módulo de Convenios</h4><p>Refactoricé el módulo en ASP.NET WebForms (C#) y su capa de datos: un guardado transaccional que integra siete tablas relacionadas y deja trazabilidad del seguimiento.</p></div>
+          <div class="area"><h4>Diseño de base de datos</h4><p>Diseñé el modelo en SQL Server para convenios, seguimiento y tiempos SLA con semáforos, incluyendo historial de transiciones para auditoría.</p></div>
+          <div class="area"><h4>Intranet y comunicaciones</h4><p>Gestión de contactos de prospectos, envío de correos por SMTP y mensajes de WhatsApp, plantillas de mailing con registro de envíos y menús de informes BI configurables desde la base de datos.</p></div>
+          <div class="area"><h4>Datos y automatización</h4><p>Proceso ETL en Python y Selenium con cargas incrementales sin duplicados hacia el data warehouse, y participación en la migración de SQL Server a PostgreSQL.</p></div>
+        </div>
+        <div class="chips" style="margin-top:18px"><span class="chip">C#</span><span class="chip">ASP.NET WebForms</span><span class="chip">SQL Server</span><span class="chip">PostgreSQL</span><span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">Git</span><span class="chip">Jira</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="habilidades">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono">Habilidades</span>
+      <h2>Un stack para trabajar en todas las capas.</h2>
+    </div>
+    <div class="skills">
+      <div class="skill"><h3>Backend</h3><ul><li>C# · ASP.NET WebForms</li><li>Python · FastAPI · Flask</li><li>Java · Spring Boot (académico)</li><li>APIs REST</li></ul></div>
+      <div class="skill"><h3>Datos</h3><ul><li>SQL Server · procedimientos almacenados</li><li>PostgreSQL · MySQL</li><li>Modelado relacional</li><li>ETL y automatización</li></ul></div>
+      <div class="skill"><h3>Frontend y mobile</h3><ul><li>JavaScript · React</li><li>HTML · CSS · Bootstrap</li><li>Kotlin · Jetpack Compose</li><li>Room · Retrofit</li></ul></div>
+      <div class="skill"><h3>Herramientas</h3><ul><li>Git · GitHub</li><li>Postman</li><li>Jira</li><li>Visual Studio · Android Studio</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="formacion">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono">Formación</span>
+      <h2>Base técnica con continuidad en ingeniería.</h2>
+    </div>
+    <div class="edu">
+      <div class="card"><span class="k">01 · Título · DuocUC</span><h3>Técnico Analista Programador</h3><p>Técnico de nivel superior · 2024 – 2025</p></div>
+      <div class="card"><span class="k">02 · En curso · DuocUC</span><h3>Ingeniería en Informática</h3><p>Desde marzo 2024</p></div>
+      <div class="card"><span class="k">03 · Certificación</span><h3>Desarrollo Fullstack</h3><p>DuocUC · 2025</p></div>
+      <div class="card"><span class="k">04 · Certificación</span><h3>Power BI</h3><p>Santander Open Academy · 2026</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre-mi">
+  <div class="wrap">
+    <div class="sec-head"><span class="mono">Sobre mí</span></div>
+    <div class="about">
+      <div>
+        <p>Soy <b>Skarlett Tropan</b>, desarrolladora de software en Santiago, Chile. Me formé como <b>Técnico Analista Programador</b> en DuocUC y hoy curso <b>Ingeniería en Informática</b>.</p>
+        <p>En BanCrece trabajé sobre sistemas reales del negocio: módulos web en C#, modelos de datos en SQL Server y procesos automatizados en Python. Ahí aprendí a cuidar los datos, documentar lo que hago y entregar cambios que se pueden mantener.</p>
+        <p>Fuera del trabajo construyo apps Android y web, y estoy desarrollando un sistema de gestión para un cliente real. Me gusta entender el problema completo antes de escribir código.</p>
+      </div>
+      <div class="looking">
+        <span class="mono">Qué busco</span>
+        <h3>Roles de desarrollo de software</h3>
+        <ul>
+          <li>Desarrolladora Full-Stack o Backend</li>
+          <li>Analista Programadora</li>
+          <li>Modalidad híbrida o remota</li>
+          <li>Equipos donde pueda aportar y seguir creciendo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <div class="contact">
+      <div>
+        <span class="mono">Contacto</span>
+        <h2>Conversemos.</h2>
+        <p>¿Tienes un rol o un proyecto donde pueda aportar? Escríbeme y coordinamos. Disponible para roles híbridos o remotos desde Santiago, Chile.</p>
+        <div class="cta" style="margin-top:22px"><a class="btn primary" href="mailto:skarlethtropan8@gmail.com">Escribirme por correo</a></div>
+      </div>
+      <div class="channels">
+        <a class="channel" href="mailto:skarlethtropan8@gmail.com"><small>Email</small><span>skarlethtropan8@gmail.com</span></a>
+        <a class="channel" href="https://www.linkedin.com/in/skarlett-victoria-tropan-herrera-862047183/" target="_blank" rel="noopener"><small>LinkedIn</small><span>Skarlett Tropan</span></a>
+        <a class="channel" href="https://github.com/skarlethtropan8-svg" target="_blank" rel="noopener"><small>GitHub</small><span>skarlethtropan8-svg</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Skarlett Tropan · Desarrolladora de Software · Santiago, Chile</footer>
+</body>
+</html>
